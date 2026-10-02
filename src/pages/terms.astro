@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Using Fylmer", body: "You are responsible for your account, submitted materials, connected providers, generated outputs, and ensuring that your use complies with applicable law and the rights of others." },
+  { title: "Generative media", body: "AI outputs can be inaccurate, inconsistent, or unsuitable. Review every output before publication or production use. Availability, speed, and cost can depend on third-party model and infrastructure providers." },
+  { title: "Plans and early offers", body: "Pricing, limits, and promotional eligibility are shown before purchase. Founding offers apply only to eligible new accounts and may be subject to launch availability, duration, and plan restrictions disclosed at checkout." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Terms of Use | Fylmer" description="Terms governing access to and use of the Fylmer platform."><InfoPage eyebrow="Legal" title="Terms for using Fylmer." intro="These terms outline the core responsibilities that apply when accessing Fylmer. Last updated October 3, 2026." sections={sections} cta={{label:"Safety principles",href:"/safety"}} /></SiteLayout>

@@ -1117,6 +1117,245 @@ main {
   color: #fff;
 }
 
+.platform-showcase {
+  padding: 0 1.25rem clamp(5rem, 8vw, 8rem);
+  background: #fff;
+  color: #111;
+}
+
+.showcase-products,
+.showcase-frame {
+  width: min(100%, 98rem);
+  margin-inline: auto;
+}
+
+.showcase-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.showcase-products.is-single {
+  grid-template-columns: 1fr;
+}
+
+.showcase-products.is-single button {
+  width: 42%;
+}
+
+.showcase-products,
+.showcase-features {
+  scrollbar-width: none;
+}
+
+.showcase-products::-webkit-scrollbar,
+.showcase-features::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-products button {
+  position: relative;
+  min-width: 0;
+  padding: 0 0 1.2rem;
+  border: 0;
+  border-bottom: 1px solid #d8d8d8;
+  background: transparent;
+  color: #a2a2a2;
+  text-align: left;
+  font: inherit;
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  line-height: 1.15;
+  cursor: pointer;
+  transition: color 160ms ease-out;
+}
+
+.showcase-products button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: #111;
+  opacity: 0;
+  transform: scaleX(0.75);
+  transform-origin: left;
+  transition: opacity 160ms ease-out, transform 160ms ease-out;
+}
+
+.showcase-products button:hover,
+.showcase-products button:focus-visible,
+.showcase-products button.is-active {
+  color: #171717;
+}
+
+.showcase-products button.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.showcase-frame {
+  min-height: 36rem;
+  margin-top: 1.85rem;
+  display: grid;
+  grid-template-columns: minmax(15rem, 24%) minmax(0, 1fr);
+  gap: clamp(2rem, 4.2vw, 5.5rem);
+  align-items: center;
+  padding: clamp(2.8rem, 4.6vw, 4.8rem) clamp(2.2rem, 3.8vw, 3.8rem);
+  border: 1px solid #dedede;
+  border-radius: 8px;
+}
+
+.showcase-features {
+  display: grid;
+  align-content: center;
+  gap: 1.45rem;
+}
+
+.showcase-features button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #c3c3c3;
+  text-align: left;
+  font: inherit;
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  line-height: 1.25;
+  cursor: pointer;
+  transition: color 160ms ease-out;
+}
+
+.showcase-features button:hover,
+.showcase-features button:focus-visible,
+.showcase-features button.is-active {
+  color: #171717;
+}
+
+.showcase-features button:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.showcase-media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e9e9e9;
+  aspect-ratio: 16 / 9;
+}
+
+.showcase-media video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.waitlist-popup {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 3vw, 2.5rem);
+  z-index: 1200;
+  width: min(25rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: #0b0b0b;
+  color: #fff;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 220ms ease-out, transform 220ms ease-out;
+}
+
+.waitlist-popup[hidden] {
+  display: none;
+}
+
+.waitlist-popup.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.waitlist-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9c9c9c;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.waitlist-close:hover,
+.waitlist-close:focus-visible {
+  color: #fff;
+}
+
+.waitlist-kicker {
+  margin: 0 0 1.8rem;
+  color: #9c9c9c;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.waitlist-popup h2 {
+  max-width: 8ch;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.waitlist-popup > p:not(.waitlist-kicker) {
+  margin: 1.15rem 0 1.35rem;
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.waitlist-popup > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 5px;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.waitlist-popup > a:hover,
+.waitlist-popup > a:focus-visible {
+  background: #dedede;
+}
+
+.waitlist-popup small {
+  display: block;
+  margin-top: 0.8rem;
+  color: #777;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waitlist-popup {
+    transition: none;
+  }
+}
+
 .workflow-section {
   border-top: 1px solid var(--line);
 }
@@ -1305,12 +1544,23 @@ main {
 .latest-visual {
   position: relative;
   min-width: 0;
+  display: block;
   aspect-ratio: 1.9 / 1;
   overflow: hidden;
   border-radius: 7px;
   background-image: url("./assets/hero.png");
   background-size: cover;
   isolation: isolate;
+  transition: transform 180ms ease-out;
+}
+
+.latest-visual:hover {
+  transform: scale(0.992);
+}
+
+.latest-visual:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
 }
 
 .latest-visual::after {
@@ -1409,13 +1659,19 @@ main {
   font-weight: 650;
 }
 
-.latest-copy a span {
-  font-size: 1.35rem;
-  line-height: 0.7;
+.latest-copy .keyline-arrow {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
   transition: transform 180ms ease;
 }
 
-.latest-copy a:hover span {
+.latest-copy a:hover .keyline-arrow {
   transform: translateX(3px);
 }
 
@@ -1440,11 +1696,10 @@ main {
 }
 
 .site-footer {
-  min-height: 52rem;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(4rem, 6vw, 6rem) max(1.25rem, calc((100vw - 98rem) / 2)) 1.6rem;
+  padding: clamp(3rem, 4vw, 4.5rem) max(1.25rem, calc((100vw - 98rem) / 2)) 1.5rem;
   background: #090909;
   color: #fff;
 }
@@ -1491,7 +1746,7 @@ main {
   grid-template-columns: 10rem minmax(0, 1fr) auto;
   gap: 2.5rem;
   align-items: end;
-  padding-top: 4rem;
+  padding-top: clamp(3rem, 4vw, 4rem);
 }
 
 .footer-brand {
@@ -1615,6 +1870,18 @@ main {
   .platform-card {
     min-height: 0;
   }
+
+  .showcase-frame {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .showcase-features {
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1679,6 +1946,23 @@ main {
     gap: 3.2rem;
   }
 
+  .platform-showcase {
+    padding-inline: 1rem;
+  }
+
+  .showcase-products {
+    gap: 0.75rem;
+  }
+
+  .showcase-products button {
+    font-size: 0.92rem;
+  }
+
+  .showcase-frame {
+    margin-top: 1.25rem;
+    padding: 1rem;
+  }
+
   .platform-card .platform-lede,
   .platform-card .platform-detail {
     min-height: 0;
@@ -1736,6 +2020,31 @@ main {
 
   .brand-lockups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .showcase-products {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .showcase-products.is-single {
+    display: grid;
+  }
+
+  .showcase-products button {
+    flex: 0 0 9.5rem;
+  }
+
+  .showcase-products.is-single button {
+    width: 100%;
+  }
+
+  .showcase-features {
+    gap: 1.25rem;
+  }
+
+  .showcase-features button {
+    font-size: 0.92rem;
   }
 
   .floating-card {

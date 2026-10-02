@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Information we collect", body: "Fylmer may collect account details, production inputs, generated assets, usage events, device information, and support messages needed to operate and improve the service." },
+  { title: "How information is used", body: "Information is used to provide the platform, secure accounts, process requested generations, support users, improve reliability, and meet legal obligations. Production content is handled according to the settings and providers connected to the account." },
+  { title: "Choices and contact", body: "You may request access, correction, or deletion of personal information through the account support channel. Retention can vary where information is needed for security, billing, dispute resolution, or legal compliance." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Privacy Policy | Fylmer" description="How Fylmer collects, uses, and protects personal information."><InfoPage eyebrow="Legal" title="Privacy at Fylmer." intro="This overview explains the information Fylmer handles while providing its AI-native filmmaking platform. Last updated October 3, 2026." sections={sections} cta={{label:"Contact Fylmer",href:"/contact"}} /></SiteLayout>

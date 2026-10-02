@@ -251,6 +251,113 @@
   window.setInterval(swapGroup, 2500);
 })();
 
+(function () {
+  const root = document.querySelector("[data-platform-showcase]");
+  if (!root) return;
+
+  const products = {
+    creative: {
+      label: "Creative features",
+      video: "/assets/platform-loops/creative.webm",
+      features: ["How Fylmer is used", "Direct a scene", "Build visual worlds", "Review every take"],
+    },
+    dev: {
+      label: "Developer features",
+      video: "/assets/platform-loops/dev.webm",
+      features: ["Production-ready API", "Route creative models", "Stream live progress", "Keep generation state"],
+    },
+    production: {
+      label: "Production features",
+      features: [
+        { label: "Plan the whole story", video: "/assets/platform-loops/production-plan.webm" },
+        { label: "Preserve continuity", video: "/assets/platform-loops/production-continuity.webm" },
+        { label: "Collaborate on review", video: "/assets/platform-loops/dev.webm" },
+        { label: "Deliver the final cut", video: "/assets/platform-loops/production-delivery.webm" },
+      ],
+    },
+  };
+
+  const productButtons = Array.from(root.querySelectorAll("[data-showcase-product]"));
+  const featureList = root.querySelector("[data-showcase-features]");
+  const video = root.querySelector("[data-showcase-video]");
+  const source = video?.querySelector("source");
+  if (!featureList || !video || !source) return;
+
+  let autoAdvanceId;
+
+  const stopAutoAdvance = () => {
+    window.clearInterval(autoAdvanceId);
+  };
+
+  const startAutoAdvance = () => {
+    stopAutoAdvance();
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    autoAdvanceId = window.setInterval(() => {
+      const buttons = Array.from(featureList.querySelectorAll("button"));
+      const activeIndex = buttons.findIndex((item) => item.classList.contains("is-active"));
+      selectFeature(buttons[(activeIndex + 1) % buttons.length]);
+    }, 900);
+  };
+
+  const selectFeature = (button, restartTimer = false) => {
+    featureList.querySelectorAll("button").forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-selected", String(selected));
+    });
+    const nextVideo = button.dataset.video;
+    if (nextVideo && source.getAttribute("src") !== nextVideo) {
+      source.setAttribute("src", nextVideo);
+      video.load();
+      video.play().catch(() => {});
+    }
+    if (restartTimer) startAutoAdvance();
+  };
+
+  const selectProduct = (key) => {
+    const product = products[key];
+    if (!product) return;
+
+    productButtons.forEach((button) => {
+      const selected = button.dataset.showcaseProduct === key;
+      button.classList.toggle("is-active", selected);
+      button.setAttribute("aria-selected", String(selected));
+    });
+
+    featureList.setAttribute("aria-label", product.label);
+    featureList.replaceChildren(...product.features.map((feature, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.role = "tab";
+      button.textContent = feature.label;
+      button.dataset.video = feature.video;
+      button.classList.toggle("is-active", index === 0);
+      button.setAttribute("aria-selected", String(index === 0));
+      button.addEventListener("click", () => selectFeature(button, true));
+      return button;
+    }));
+
+    const firstVideo = product.features[0].video;
+    if (source.getAttribute("src") !== firstVideo) {
+      source.setAttribute("src", firstVideo);
+      video.load();
+      video.play().catch(() => {});
+    }
+  };
+
+  productButtons.forEach((button) => {
+    button.addEventListener("click", () => selectProduct(button.dataset.showcaseProduct));
+  });
+
+  root.addEventListener("mouseenter", stopAutoAdvance);
+  root.addEventListener("mouseleave", startAutoAdvance);
+  root.addEventListener("focusin", stopAutoAdvance);
+  root.addEventListener("focusout", startAutoAdvance);
+
+  selectProduct("production");
+  startAutoAdvance();
+})();
+
 (async function () {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
