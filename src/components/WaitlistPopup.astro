@@ -3,7 +3,13 @@
   <p class="waitlist-kicker">Founding filmmaker offer</p>
   <h2 id="waitlist-title">Get 50% off at launch.</h2>
   <p>Join Fylmer early access and lock in half-price access for your first three months when paid plans launch.</p>
-  <a href="https://app.fylmer.com/login?intent=waitlist&amp;offer=founding50" data-waitlist-cta>Join the waitlist <span aria-hidden="true">↗</span></a>
+  <form class="waitlist-form" data-waitlist-form novalidate>
+    <label for="waitlist-email">Email address</label>
+    <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
+    <input class="waitlist-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <button type="submit">Join the waitlist <span aria-hidden="true">↗</span></button>
+  </form>
+  <p class="waitlist-status" data-waitlist-status role="status" aria-live="polite"></p>
   <small>Offer applies to eligible new accounts. Final plan terms will be shown before purchase.</small>
 </aside>
 

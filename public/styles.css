@@ -1140,7 +1140,7 @@ main {
 }
 
 .showcase-products.is-single button {
-  width: 42%;
+  width: 34%;
 }
 
 .showcase-products,
@@ -1324,22 +1324,80 @@ main {
   line-height: 1.45;
 }
 
-.waitlist-popup > a {
+.waitlist-form {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.waitlist-form label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.waitlist-form input[type="email"] {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #171717;
+  color: #fff;
+  font: inherit;
+}
+
+.waitlist-form input[type="email"]::placeholder {
+  color: #777;
+}
+
+.waitlist-form input[type="email"]:focus {
+  border-color: #fff;
+  outline: none;
+}
+
+.waitlist-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+.waitlist-form button {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 3rem;
   padding: 0.75rem 0.9rem;
+  border: 0;
   border-radius: 5px;
   background: #fff;
   color: #111;
   font-weight: 600;
-  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
 }
 
-.waitlist-popup > a:hover,
-.waitlist-popup > a:focus-visible {
+.waitlist-form button:hover,
+.waitlist-form button:focus-visible {
   background: #dedede;
+}
+
+.waitlist-form button:disabled {
+  color: #777;
+  cursor: wait;
+}
+
+.waitlist-status {
+  min-height: 1.35rem;
+  margin: 0.7rem 0 0;
+  color: #ffb4a8;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.waitlist-status.is-success {
+  color: #fff;
 }
 
 .waitlist-popup small {
