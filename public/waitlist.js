@@ -22,7 +22,7 @@
   const dismiss = () => {
     popup.classList.remove("is-visible");
     try { window.localStorage.setItem(storageKey, "true"); } catch {}
-    window.setTimeout(() => { popup.hidden = true; }, reducedMotion ? 0 : 240);
+    popup.hidden = true;
   };
 
   popup.querySelector("[data-waitlist-close]")?.addEventListener("click", dismiss);
@@ -48,11 +48,12 @@
       if (!response.ok) throw new Error(result.error || "Could not join right now.");
 
       form.hidden = true;
-      status.textContent = result.existing
-        ? "You’re already on the list. We’ll keep your founding offer ready."
-        : "You’re on the list. We’ll email you when founding access opens.";
+      status.innerHTML = result.existing
+        ? "<strong>✓ You’re already on the list.</strong>We’ll keep your founding offer ready."
+        : "<strong>✓ You’re on the list.</strong>We’ll email you when founding access opens.";
       status.classList.add("is-success");
       try { window.localStorage.setItem(storageKey, "true"); } catch {}
+      window.setTimeout(dismiss, 3500);
     } catch (error) {
       status.textContent = error instanceof Error ? error.message : "Could not join right now.";
       button.disabled = false;

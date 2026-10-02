@@ -1271,7 +1271,7 @@ main {
 }
 
 .waitlist-popup[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .waitlist-popup.is-visible {
@@ -1327,6 +1327,10 @@ main {
 .waitlist-form {
   display: grid;
   gap: 0.55rem;
+}
+
+.waitlist-form[hidden] {
+  display: none !important;
 }
 
 .waitlist-form label {
@@ -1397,7 +1401,21 @@ main {
 }
 
 .waitlist-status.is-success {
+  min-height: 0;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 5px;
+  background: #171717;
   color: #fff;
+  font-size: 0.9rem;
+}
+
+.waitlist-status.is-success strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .waitlist-popup small {
