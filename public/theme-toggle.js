@@ -291,7 +291,6 @@
 
   const startAutoAdvance = () => {
     stopAutoAdvance();
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     autoAdvanceId = window.setInterval(() => {
       const buttons = Array.from(featureList.querySelectorAll("button"));
       const activeIndex = buttons.findIndex((item) => item.classList.contains("is-active"));
@@ -348,11 +347,6 @@
   productButtons.forEach((button) => {
     button.addEventListener("click", () => selectProduct(button.dataset.showcaseProduct));
   });
-
-  root.addEventListener("mouseenter", stopAutoAdvance);
-  root.addEventListener("mouseleave", startAutoAdvance);
-  root.addEventListener("focusin", stopAutoAdvance);
-  root.addEventListener("focusout", startAutoAdvance);
 
   selectProduct("production");
   startAutoAdvance();
