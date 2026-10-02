@@ -116,7 +116,7 @@
 
   const pointer = { x: 0.56, y: 0.48, tx: 0.56, ty: 0.48, active: 0.7, target: 0.7 };
   const image = new Image();
-  image.src = "./assets/hero.png";
+  image.src = "./assets/hero.webp";
   image.onload = () => {
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);

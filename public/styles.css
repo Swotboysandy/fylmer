@@ -680,7 +680,7 @@ main {
 }
 
 .hero-media {
-  background-image: url("./assets/hero.png");
+  background-image: url("./assets/hero.webp");
   background-size: cover;
   background-position: center;
   filter: saturate(0.9) brightness(1.03) contrast(0.92);
@@ -1397,7 +1397,7 @@ main {
   border-radius: 18px;
   background:
     linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.64) 100%),
-    url("./assets/hero.png") center / cover;
+    url("./assets/hero.webp") center / cover;
 }
 
 .workflow-panel > div {
@@ -1444,7 +1444,7 @@ main {
 
 .research-section::before {
   inset: -2rem;
-  background: url("./assets/hero.png") center 42% / cover no-repeat;
+  background: url("./assets/hero.webp") center 42% / cover no-repeat;
   filter: blur(28px) saturate(0.62) brightness(0.58);
   transform: scale(1.1);
 }
@@ -1548,7 +1548,7 @@ main {
   aspect-ratio: 1.9 / 1;
   overflow: hidden;
   border-radius: 7px;
-  background-image: url("./assets/hero.png");
+  background-image: url("./assets/hero.webp");
   background-size: cover;
   isolation: isolate;
   transition: transform 180ms ease-out;
