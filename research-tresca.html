@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A technical preview of Tresca Gen-1, Fylmer's trained cinematic continuity model." />
+  <title>Introducing Tresca Gen-1 | Fylmer Research</title>
+  <link rel="stylesheet" href="./inner.css?v=1" />
+  <script defer src="./inner.js"></script>
+</head>
+<body>
+  <header class="article-nav">
+    <a class="article-logo" href="./index.html">Fylmer</a>
+    <nav class="article-links" aria-label="Primary"><a href="./creative.html">Creative</a><a href="./dev.html">Dev</a><a href="./production.html">Production</a><a href="./research-tresca.html">Research</a></nav>
+    <div class="article-actions"><a href="https://app.fylmer.com/login">Sign in</a><a class="solid" href="https://app.fylmer.com/login">Get started</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-article-menu><span></span><span></span><span></span></button></div>
+    <nav class="mobile-sheet" data-article-sheet><a href="./creative.html">Creative</a><a href="./dev.html">Dev</a><a href="./production.html">Production</a><a href="./research-tresca.html">Research</a><a href="https://app.fylmer.com/login">Sign in</a></nav>
+  </header>
+
+  <main>
+    <section class="research-hero">
+      <img src="./assets/research/storyboard-contact-sheet.png" alt="Eight cinematic storyboard frames developed in Fylmer" />
+      <div class="research-hero-copy">
+        <p class="eyebrow">Research Preview</p>
+        <h1>Introducing<br />Tresca Gen-1</h1>
+        <p class="dek">Fylmer's trained cinematic model for carrying identity, visual language, timing, and sound across AI-generated shots.</p>
+        <p class="byline">Technical preview<br />by Fylmer</p>
+      </div>
+    </section>
+
+    <article class="article-body">
+      <section class="article-lead">
+        <span class="label">From prompts to production context</span>
+        <p>A coherent film is more than a sequence of good-looking generations. Every shot must inherit decisions from the story, the cast, the world, and the cut.</p>
+      </section>
+
+      <section class="story-block">
+        <h2>What we built</h2>
+        <div class="story-copy">
+          <p>Tresca Gen-1 compiles shot direction into a production-aware generation workflow running on an on-demand GPU. It supports first- and last-frame conditioning, joint video and audio generation, explicit cut-or-continue modes, and per-user live progress.</p>
+          <p>Instead of asking a model to rediscover the same film on every prompt, Fylmer keeps the production contract attached: palette, lighting, identity, physical geography, camera behavior, timed action, and audio direction.</p>
+          <div class="fact-grid">
+            <div class="fact"><b>124</b><span>frames in a five-second Tresca Gen-1 production request at 24 fps.</span></div>
+            <div class="fact"><b>2 modes</b><span>Cut begins a new setup. Continue carries forward the preceding shot.</span></div>
+            <div class="fact"><b>1 GPU</b><span>A guarded render queue prevents competing shots from fighting for the same card.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-block">
+        <h2>Continuity as a system</h2>
+        <div class="story-copy">
+          <p>The reference workflow can bind identity and style images to the same request as a preceding video and its soundtrack. References are named and wired in a stable order, so the prompt and graph agree about which asset carries character, world, motion, or sound.</p>
+          <p>For frame-conditioned work, the previous clip's actual final frame can become the next shot's starting point. A separately chosen endpoint can also constrain where the shot must land. Titles and exact typography stay in post-production rather than being left to generative text rendering.</p>
+          <div class="evidence-grid">
+            <figure class="wide"><img src="./assets/research/cast-contact-sheet.png" alt="Fylmer cast identity reference sheet" /><figcaption>Cast identity references assembled for the Direkta production study.</figcaption></figure>
+            <figure><img src="./assets/research/beat-01.png" alt="Warehouse storyboard frame" /><figcaption>A fixed visual anchor for the opening beat.</figcaption></figure>
+            <figure><img src="./assets/research/beat-03.png" alt="Investigation storyboard frame" /><figcaption>Lighting, wardrobe, and character intent travel with the scene.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-block">
+        <h2>How Tresca Gen-1 was trained</h2>
+        <div class="story-copy">
+          <p>Tresca Gen-1 is Fylmer's trained cinematic model layer, developed on top of our MiniMax H3 integration. Its first verified character adapter was trained with Fizgig on an A100 80 GB using six captioned 768-pixel clips for 60 epochs: 360 steps over 4 hours and 34 minutes, with video and audio latents trained together.</p>
+          <p>The final 296 MB Tresca Gen-1 adapter and its 20- and 40-epoch checkpoints are checksum-verified on Fylmer's persistent model-storage VPS.</p>
+          <div class="fact-grid">
+            <div class="fact"><b>60</b><span>epochs in the completed Tresca Gen-1 training run.</span></div>
+            <div class="fact"><b>44 GB</b><span>measured VRAM during training on the A100.</span></div>
+            <div class="fact"><b>3</b><span>verified checkpoints retained on persistent storage.</span></div>
+          </div>
+          <div class="callout"><strong>Model foundation</strong><p>Tresca Gen-1 is Fylmer's trained model layer built with MiniMax H3 as its generation foundation. MiniMax H3 remains an integration inside the Fylmer stack; Tresca Gen-1 is the model identity presented to creators.</p></div>
+        </div>
+      </section>
+
+      <section class="story-block">
+        <h2>Production study</h2>
+        <div class="story-copy">
+          <p>Direkta is our working study in production coherence: a cast bible, locations, eight story beats, four visual candidates per beat, and assembled animatic passes. The point is not one perfect frame. It is the ability to inspect, compare, and carry decisions through a complete sequence.</p>
+          <div class="evidence-grid">
+            <figure class="wide"><img src="./assets/research/animatic-v3.png" alt="Direkta animatic sequence assembled from storyboard frames" /><figcaption>An assembled sequence turns isolated images into a reviewable production decision.</figcaption></figure>
+            <figure><img src="./assets/research/warehouse.png" alt="Warehouse location plate" /><figcaption>World references preserve environmental language.</figcaption></figure>
+            <figure><img src="./assets/research/reyes.png" alt="Detective Reyes character reference" /><figcaption>Character references keep identity attached to the shot plan.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="limitations" class="story-block">
+        <h2>Current limitations</h2>
+        <div class="story-copy">
+          <p>Reference conditioning improves control but does not guarantee pixel-identical identity. Five-second clips must still be reviewed for anatomy, contact, camera continuity, audio joins, and endpoint fidelity. The system treats generated output as a take to direct and evaluate, not an automatic final cut.</p>
+          <p>GPU availability, model weights, network storage, and provider state remain operational dependencies. Fylmer checks balance before generation, reserves only one render at a time, and stops the on-demand pod after work completes, but provider-level spending controls are still the final protection.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="inner-footer"><div class="inner-footer-grid"><a class="footer-logo" href="./index.html">Fylmer</a><section><h2>Platform</h2><a href="./creative.html">Creative</a><a href="./dev.html">Dev</a><a href="./production.html">Production</a></section><section><h2>Research</h2><a href="./research-tresca.html">Tresca</a><a href="./research-tresca.html#limitations">Limitations</a></section><section><h2>Access</h2><a href="https://app.fylmer.com/login">Sign in</a><a href="https://app.fylmer.com/login">Get started</a></section></div><small>© 2026 Fylmer AI. Built for AI-native filmmakers and teams.</small></footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import rawPage from "../../production.html?raw";
+const content = rawPage.match(/<main>([\s\S]*?)<\/main>/)?.[1] ?? "";
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Production" description="Connected story, cast, world, generation, and review layers."><main set:html={content} /></SiteLayout>

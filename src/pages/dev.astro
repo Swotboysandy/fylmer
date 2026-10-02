@@ -1,0 +1,6 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import rawPage from "../../dev.html?raw";
+const content = rawPage.match(/<main>([\s\S]*?)<\/main>/)?.[1] ?? "";
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Dev" description="Production-aware AI media infrastructure and workflows."><main set:html={content} /></SiteLayout>

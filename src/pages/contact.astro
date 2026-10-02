@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Creative access", body: "Sign in to start a production and explore the current creative workspace." },
+  { title: "Developer questions", body: "Use the documentation and API reference for the currently implemented platform contracts." },
+  { title: "Teams", body: "For studio deployment, shared production workflows, model integrations, and infrastructure planning, contact Fylmer through the account channel." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Contact Fylmer" description="Contact Fylmer for creative, developer, and enterprise access."><InfoPage eyebrow="Contact" title="Bring your next production." intro="Start with the app or talk with Fylmer about a production, integration, or team deployment." sections={sections} cta={{label:"Open Fylmer",href:"https://app.fylmer.com/login"}} /></SiteLayout>

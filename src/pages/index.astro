@@ -1,0 +1,9 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import rawHome from "../../index.html?raw";
+const content = rawHome.match(/<main>([\s\S]*?)<\/main>/)?.[1] ?? "";
+---
+
+<SiteLayout title="Fylmer | AI Filmmaking Platform" description="Fylmer is an AI filmmaking workspace for directing scenes, references, and generated takes.">
+  <main set:html={content} />
+</SiteLayout>

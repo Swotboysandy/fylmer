@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Creative access", body: "Plan stories, build worlds, create storyboards, and review productions in one workspace. Generation usage depends on the connected model provider and available compute." },
+  { title: "Usage transparency", body: "Fylmer checks generation requirements and available provider balance before starting supported GPU jobs. Estimates are guidance, while provider-level limits remain the final spending control." },
+  { title: "Teams and enterprise", body: "Shared production access, deployment requirements, model integrations, and studio workflows are scoped directly with each team." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Pricing" description="Fylmer access and generation usage information."><InfoPage eyebrow="Pricing" title="Pay for production, not prompt chaos." intro="Fylmer is preparing its initial plans. Join through the app for individual access or contact us for team and enterprise deployment." sections={sections} cta={{label:"Get started",href:"https://app.fylmer.com/login"}} /></SiteLayout>

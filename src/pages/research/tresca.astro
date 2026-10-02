@@ -1,0 +1,6 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import rawPage from "../../../research-tresca.html?raw";
+const content = (rawPage.match(/<main>([\s\S]*?)<\/main>/)?.[1] ?? "").replaceAll("./assets/", "/assets/");
+---
+<SiteLayout pageClass="inner-page" title="Introducing Tresca Gen-1 | Fylmer Research" description="Tresca Gen-1 is Fylmer's trained cinematic continuity model."><main set:html={content} /></SiteLayout>

@@ -1,0 +1,11 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Script", body: "Write or import the screenplay, submit it as the production source of truth, and extract structured beats, characters, and locations." },
+  { title: "World", body: "Cast character looks, establish locations, and attach identity and visual references before committing generation spend." },
+  { title: "Storyboard", body: "Translate each beat into frame candidates with deliberate camera, lens, composition, cast, location, and style decisions." },
+  { title: "Shots and cut", body: "Animate approved frames, carry forward the preceding clip when continuity matters, compare takes, arrange the cut, and finish only approved material." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Workflows" description="The Fylmer script-to-finish production workflow."><InfoPage eyebrow="Workflows" title="From screenplay to final take." intro="A controlled seven-stage production path keeps story, identity, visual language, and review decisions attached to every generated asset." sections={sections} cta={{label:"Start directing",href:"https://app.fylmer.com/login"}} /></SiteLayout>

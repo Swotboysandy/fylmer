@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fylmer is an AI filmmaking workspace for directing scenes, agents, references, and generated takes."
+    />
+    <title>Fylmer | AI Filmmaking Platform</title>
+    <link rel="stylesheet" href="./styles.css?v=mobile-menu" />
+    <script defer src="./theme-toggle.js"></script>
+    <script defer src="./retro-dither.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="top-nav" data-site-header>
+        <div class="nav-shell">
+          <a class="brand-mark" href="#" aria-label="Fylmer home">
+            <span>Fylmer</span>
+          </a>
+          <nav class="nav-links" aria-label="Primary navigation">
+            <button class="nav-trigger is-active" type="button" data-menu-trigger="developers">
+              Developers
+            </button>
+            <a href="#pricing">Pricing</a>
+            <a href="#research">About</a>
+          </nav>
+          <div class="nav-actions">
+            <a class="login-link" href="https://app.fylmer.com/login">Sign in</a>
+            <span class="flow-button-wrap">
+              <span class="flow-button-border" aria-hidden="true">
+                <svg preserveAspectRatio="none"><path /></svg>
+              </span>
+              <a class="button button-primary" href="https://app.fylmer.com/login">Get started</a>
+            </span>
+            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-menu-toggle>
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu>
+          <a href="#creative">Developers</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#research">About</a>
+          <a href="#latest-heading">News</a>
+          <a href="#enterprise">Enterprise</a>
+          <div class="mobile-menu-footer">
+            <a href="https://app.fylmer.com/login">Sign in</a>
+            <a class="mobile-menu-cta" href="https://app.fylmer.com/login">Get started <span>↗</span></a>
+          </div>
+        </nav>
+
+        <div class="mega-menu" data-mega-menu>
+          <div class="mega-grid">
+            <a class="mega-card mega-card-large" href="#research">
+              <span>Guides</span>
+              <p>Learn, create, innovate: Step-by-step access control and AI filmmaking tutorials</p>
+              <svg class="mega-art mega-art-orbit" viewBox="0 0 260 260" aria-hidden="true">
+                <circle cx="130" cy="130" r="104" />
+                <circle cx="130" cy="130" r="68" />
+                <path d="M83 139c18-45 50-4 34 18s23 54 38 18-38-43 1-62 42 24 18 37 31 23 38 50" />
+                <circle cx="70" cy="132" r="18" />
+                <circle cx="130" cy="203" r="18" />
+                <circle cx="198" cy="97" r="18" />
+              </svg>
+            </a>
+            <a class="mega-card" href="#models">
+              <span>Tools</span>
+              <p>Our resources include model routing, shot planning and AI generation control guides</p>
+              <div class="binary-art" aria-hidden="true">0110010100|101<br />1010101011|111<br />1010001110|100</div>
+            </a>
+            <a class="mega-card" href="#creative">
+              <span>Case studies</span>
+              <p>Our creators stories are the only ones that matter</p>
+              <svg class="mega-art chart-art" viewBox="0 0 230 92" aria-hidden="true">
+                <path d="M8 72h214M8 20h214M51 8v76M96 8v76M141 8v76M186 8v76" />
+                <path d="M10 70c42 0 54-48 101-16s65 16 111 16" />
+                <path d="M10 77c42 0 54-26 101-9s66 9 111 9" />
+              </svg>
+            </a>
+          </div>
+          <a class="mega-footer" href="#research">
+            <span class="doc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4.5 5.5c2.7-1.2 5.1-1 7.5.6v12.4c-2.4-1.6-4.8-1.8-7.5-.6V5.5ZM12 6.1c2.4-1.6 4.8-1.8 7.5-.6v12.4c-2.7-1.2-5.1-1-7.5.6V6.1Z" /></svg>
+            </span>
+            <span>
+              <strong>API Documentation</strong>
+              <small>Everything you need to interact with Fylmer via API.</small>
+            </span>
+            <b>Read docs <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" /></svg></b>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section watermelon-hero" aria-label="Fylmer hero">
+          <div class="hero-media" aria-hidden="true"></div>
+          <canvas class="retro-dither-canvas" aria-hidden="true"></canvas>
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-content">
+            <h1>
+              <span>Where Stories</span>
+              <span>Become Cinema</span>
+            </h1>
+            <p class="hero-copy">
+              Step away from prompt chaos into a calm AI film workspace. Fylmer helps you
+              guide scenes, characters, references, and generated takes from first idea
+              to final frame.
+            </p>
+            <a class="hero-link" href="https://app.fylmer.com/login"><span class="hero-link-label">Start directing</span><span class="hero-link-arrow">↗</span></a>
+          </div>
+          <p class="trust-note">
+            Built for AI-native<br />
+            filmmakers and teams
+          </p>
+        </section>
+
+        <section class="partners-strip" aria-label="Technology partners">
+          <p>Built with the world's leading AI and creative technology platforms.</p>
+          <div class="logos-carousel" aria-label="Technology partner logo carousel" data-logos-carousel></div>
+        </section>
+
+        <section id="creative" class="intro-section">
+          <h2>
+            <span>Three platforms built on top of</span>
+            <span>the same cinematic intelligence.</span>
+          </h2>
+          <div class="platform-grid">
+            <article class="platform-card">
+              <h3>Fylmer Creative</h3>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="A Fylmer-generated observatory sequence"><source src="/assets/platform-loops/creative.webm" type="video/webm" /></video>
+              <p class="platform-lede">Your complete Creative Suite with everything you need to make your film.</p>
+              <p class="platform-detail">An all-in-one creative workspace to develop scenes, direct visual language, preserve character references, and turn an idea into polished cinematic takes.</p>
+              <div class="card-actions">
+                <a class="primary" href="https://app.fylmer.com/login">Try now</a>
+                <a href="/creative">Learn more</a>
+                <a href="#enterprise">For Enterprise</a>
+              </div>
+            </article>
+            <article class="platform-card">
+              <h3>Fylmer Dev</h3>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="A Fylmer-generated cinematic action sequence"><source src="/assets/platform-loops/dev.webm" type="video/webm" /></video>
+              <p class="platform-lede">The AI media platform for developers to build with the best creative models.</p>
+              <p class="platform-detail">Use one production-ready API for model routing, generation state, references, and outputs while Fylmer handles the complex infrastructure underneath.</p>
+              <div class="card-actions">
+                <a class="primary" href="/dev">Get API Key</a>
+                <a href="/docs">View documentation</a>
+                <a href="#enterprise">For Enterprise</a>
+              </div>
+            </article>
+            <article class="platform-card">
+              <h3>Fylmer Production</h3>
+              <video autoplay muted loop playsinline preload="metadata" aria-label="A Fylmer-generated animated festival sequence"><source src="/assets/platform-loops/production.webm" type="video/webm" /></video>
+              <p class="platform-lede">A complete toolkit for teams to run consistent AI-native productions.</p>
+              <p class="platform-detail">From story planning and continuity to review and delivery, every production layer stays connected so small teams can create at studio scale.</p>
+              <div class="card-actions">
+                <a class="primary" href="/production">Learn more</a>
+                <a href="/contact">Contact Sales</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="research" class="research-section">
+          <div class="research-copy">
+            <p class="research-kicker">Fylmer Research</p>
+            <h2>We are building foundational cinematic intelligence that can understand stories, preserve continuity, and help creators generate coherent worlds. The next frontier of filmmaking will come from models that can reason across every frame.</h2>
+            <a class="research-button" href="https://app.fylmer.com/login">Learn more</a>
+          </div>
+          <div class="research-index" aria-label="Fylmer research areas">
+            <a href="/research/tresca">
+              <span>
+                <strong>Tresca Gen-1</strong>
+                <small>Character, environment, and visual-language consistency across every generated shot.</small>
+              </span>
+              <b aria-hidden="true">↗</b>
+            </a>
+            <a href="/research/tresca">
+              <span>
+                <strong>Story Intelligence</strong>
+                <small>Systems that understand narrative structure, scene intent, and cinematic direction.</small>
+              </span>
+              <b aria-hidden="true">↗</b>
+            </a>
+            <a href="/production">
+              <span>
+                <strong>Production Models</strong>
+                <small>Our long-term research into AI models designed for controllable, production-ready filmmaking.</small>
+              </span>
+              <b aria-hidden="true">↗</b>
+            </a>
+          </div>
+        </section>
+
+        <section class="latest-section" aria-labelledby="latest-heading">
+          <h2 id="latest-heading">See the latest from Fylmer</h2>
+          <div class="latest-grid">
+            <article class="latest-story">
+              <div class="latest-visual latest-visual-team" role="img" aria-label="A collaborative cinematic production workspace">
+                <span>One vision.<br />One production.</span>
+              </div>
+              <div class="latest-copy">
+                <h3>Introducing Team Plan</h3>
+                <p>Fylmer's collaboration plan for creative teams, with shared projects, production context, and review tools in one workspace.</p>
+                <a href="https://app.fylmer.com/login">Learn more <span aria-hidden="true">›</span></a>
+              </div>
+            </article>
+
+            <article class="latest-story">
+              <div class="latest-visual latest-visual-worlds" role="img" aria-label="A cinematic world generated with Fylmer">
+                <span>Fylmer Worlds</span>
+              </div>
+              <div class="latest-copy">
+                <h3>Introducing Fylmer Worlds</h3>
+                <p>Build visual worlds that stay coherent from frame to frame, with story context and cinematic direction carried through every take.</p>
+                <a href="/research/tresca">Learn more <span aria-hidden="true">›</span></a>
+              </div>
+            </article>
+
+            <article class="latest-story">
+              <div class="latest-visual latest-visual-enterprise" role="img" aria-label="An abstract cinematic production texture"></div>
+              <div class="latest-copy">
+                <h3>The Next Phase of Enterprise Video Generation</h3>
+                <p>What creative teams need from secure, controllable AI production, from brand continuity to faster review and delivery.</p>
+                <a href="/research/tresca">Learn more <span aria-hidden="true">›</span></a>
+              </div>
+            </article>
+
+            <article class="latest-story">
+              <div class="latest-visual latest-visual-engine" role="img" aria-label="A luminous landscape representing cinematic intelligence">
+                <span>Continuity Engine</span>
+              </div>
+              <div class="latest-copy">
+                <h3>Introducing Continuity Engine</h3>
+                <p>Character, environment, and visual-language consistency designed to survive the full journey from scene planning to final cut.</p>
+                <a href="/research/tresca">Learn more <span aria-hidden="true">›</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-directory">
+          <section class="footer-group"><h2>Creative</h2><a href="#creative">Overview</a><a href="#creative">Studio</a><a href="#creative">Scenes</a><a href="#creative">Characters</a><a href="#creative">Storyboards</a><a href="#creative">Use Cases</a><a href="#pricing">Pricing</a><a href="https://app.fylmer.com/login">Team Plan</a><a href="https://app.fylmer.com/login">Login</a></section>
+          <section class="footer-group"><h2>Dev</h2><a href="#creative">Platform <span>↗</span></a><a href="#research">Models <span>↗</span></a><a href="#research">Model Router <span>↗</span></a><a href="#research">Workflows</a><a href="#research">Recipes <span>↗</span></a><a href="#creative">Characters</a><a href="#research">Documentation <span>↗</span></a><a href="#pricing">Pricing</a></section>
+          <section class="footer-group"><h2>Production</h2><a href="#creative">Overview</a><a href="#research">Continuity Engine</a><a href="#research">Story Intelligence</a><a href="#research">Visual References</a><a href="#creative">Team Review</a><a href="#creative">Model Licensing</a><a href="https://app.fylmer.com/login">Get Access</a></section>
+          <section class="footer-group"><h2>Enterprise</h2><a href="#enterprise">Overview</a><a href="#enterprise">Data Security</a><a href="#creative">Customer Stories</a><a href="#enterprise">For Studios</a><a href="#enterprise">For Education</a><a href="#enterprise">Contact Sales</a></section>
+          <section class="footer-group"><h2>Research</h2><a href="#research">Research Hub</a><a href="#research">Research News</a><a href="#research">Publications</a><a href="#research">Continuity</a><a href="#research">World Models</a><a href="#research">Story Systems</a><a href="#research">Cinematic Language</a></section>
+          <section class="footer-group"><h2>Resources</h2><a href="#creative">Academy <span>↗</span></a><a href="#research">Help Center <span>↗</span></a><a href="#research">Resource Hub</a><a href="#latest-heading">News</a><a href="#latest-heading">Changelog</a><a href="#enterprise">Community <span>↗</span></a></section>
+          <section class="footer-group"><h2>Programs</h2><a href="#enterprise">AI Film Festival <span>↗</span></a><a href="#enterprise">Creator Sessions <span>↗</span></a><a href="#enterprise">Studios</a><a href="#enterprise">Creative Partners</a><a href="#enterprise">Fylmer Builders</a><a href="#enterprise">Affiliate Program</a><a href="#enterprise">Talent Network <span>↗</span></a></section>
+          <section class="footer-group"><h2>Company</h2><a href="#research">About Us</a><a href="#enterprise">Careers</a><a href="#enterprise">Safety</a><a href="#enterprise">Brand Guidelines</a><a href="#latest-heading">Press</a><a href="#enterprise">Partnerships</a></section>
+        </div>
+        <div class="footer-bottom">
+          <a class="footer-brand" href="#" aria-label="Fylmer home">Fylmer</a>
+          <p>© 2026 FYLMER AI, INC. / <a href="#">TERMS OF USE</a> / <a href="#">PRIVACY POLICY</a> / <a href="#">YOUR PRIVACY CHOICES</a> / <a href="#">COOKIE SETTINGS</a><br />MADE FOR AI-NATIVE FILMMAKERS / <a href="#">ENGLISH</a></p>
+          <nav class="footer-social" aria-label="Social links"><a href="#" aria-label="X">X</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Discord">◉</a></nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Production continuity", body: "Connect script intent, approved references, model settings, takes, and reviews across the full production instead of passing disconnected prompts between tools." },
+  { title: "Model architecture", body: "Route creative work through supported providers while keeping production context and generated assets in Fylmer. Tresca Gen-1 adds Fylmer's trained cinematic model layer." },
+  { title: "Deployment", body: "Enterprise deployment, storage, GPU orchestration, access policy, and provider accounts are reviewed as one operational system before launch." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Enterprise" description="AI-native production infrastructure for studios and teams."><InfoPage eyebrow="Enterprise" title="A connected production layer for AI-native teams." intro="Fylmer gives studios one place to direct stories, control references, manage generation, and review outputs." sections={sections} cta={{label:"Contact Fylmer",href:"/contact"}} /></SiteLayout>

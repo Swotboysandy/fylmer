@@ -1,0 +1,37 @@
+---
+const pathname = Astro.url.pathname;
+const home = pathname === "/";
+---
+
+<header class:list={["top-nav", !home && "inner-global-nav"]} data-site-header>
+  <div class="nav-shell">
+    <a class="brand-mark" href="/" aria-label="Fylmer home"><span>Fylmer</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <button class="nav-trigger" type="button" data-menu-trigger="developers">Developers</button>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="login-link" href="https://app.fylmer.com/login">Sign in</a>
+      <span class="flow-button-wrap">
+        <span class="flow-button-border" aria-hidden="true"><svg preserveAspectRatio="none"><path /></svg></span>
+        <a class="button button-primary" href="https://app.fylmer.com/login">Get started</a>
+      </span>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-mobile-menu-toggle><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" data-mobile-menu>
+    <a href="/creative">Creative</a><a href="/dev">Dev</a><a href="/production">Production</a><a href="/research/tresca">Tresca Gen-1</a><a href="/docs">Documentation</a><a href="/pricing">Pricing</a><a href="/about">About</a>
+    <div class="mobile-menu-footer"><a href="https://app.fylmer.com/login">Sign in</a><a class="mobile-menu-cta" href="https://app.fylmer.com/login">Get started <span>↗</span></a></div>
+  </nav>
+
+  <div class="mega-menu" data-mega-menu>
+    <div class="mega-grid">
+      <a class="mega-card mega-card-large" href="/dev"><span>Platform</span><p>Model routing, production state, references, outputs, and developer tooling.</p></a>
+      <a class="mega-card" href="/docs"><span>Documentation</span><p>Build with Fylmer's production-aware APIs and generation workflows.</p><div class="binary-art" aria-hidden="true">0110010100|101<br />1010101011|111<br />1010001110|100</div></a>
+      <a class="mega-card" href="/workflows"><span>Workflows</span><p>Move from script to cast, storyboard, shots, cut, and finish with continuity intact.</p></a>
+    </div>
+    <a class="mega-footer" href="/research/tresca"><span class="doc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 5.5c2.7-1.2 5.1-1 7.5.6v12.4c-2.4-1.6-4.8-1.8-7.5-.6V5.5ZM12 6.1c2.4-1.6 4.8-1.8 7.5-.6v12.4c-2.7-1.2-5.1-1-7.5.6V6.1Z" /></svg></span><span><strong>Introducing Tresca Gen-1</strong><small>Fylmer's trained cinematic model.</small></span><b>Read research <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5" /></svg></b></a>
+  </div>
+</header>

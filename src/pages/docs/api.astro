@@ -1,0 +1,11 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import InfoPage from "../../components/InfoPage.astro";
+const sections = [
+  { title: "Projects", body: "Project endpoints return the production bundle: project metadata, bible, beats, cast, locations, props, activity, nodes, and edges. Ownership is checked server-side." },
+  { title: "Storyboard", body: "Storyboard routes compile beat context, camera choices, cast references, location references, and visual direction into reviewable frame candidates." },
+  { title: "Video generation", body: "Shot animation accepts a model, motion and audio direction, up to nine references, continuity mode, optional endpoint frame, duration, and dry-run mode. Budget failures return a structured estimate before the GPU starts." },
+  { title: "Streams and assets", body: "Chat and generation status use server-sent events. Progress, executing nodes, previews, completion, and errors are relayed to the requesting user. Assets can be queried by kind, search text, favourite state, and cursor." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer API Reference" description="Core Fylmer API resources and generation contracts."><InfoPage eyebrow="Developer reference" title="APIs that understand the shot." intro="A concise reference to the production resources already implemented in Fylmer. Authentication is required for application data and generation routes." sections={sections} cta={{label:"View workflows",href:"/workflows"}} /></SiteLayout>

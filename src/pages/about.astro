@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "The idea", body: "AI filmmaking should behave like production: a screenplay creates context, characters retain identity, scenes inherit decisions, and every take can be reviewed." },
+  { title: "What we are building", body: "Fylmer combines story development, world building, storyboard direction, generation orchestration, continuity, editing, and delivery in one calm workspace." },
+  { title: "Tresca Gen-1", body: "Our first trained cinematic model layer focuses on continuity across shots while using MiniMax H3 as its underlying generation integration." }
+];
+---
+<SiteLayout pageClass="inner-page" title="About Fylmer" description="Fylmer is building a production layer for AI-native filmmaking."><InfoPage eyebrow="About Fylmer" title="Stories need systems, not isolated prompts." intro="We are building the production layer for filmmakers working with generative media." sections={sections} cta={{label:"Read about Tresca Gen-1",href:"/research/tresca"}} /></SiteLayout>

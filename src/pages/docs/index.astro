@@ -1,0 +1,11 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import InfoPage from "../../components/InfoPage.astro";
+const sections = [
+  { title: "Production model", body: "Fylmer organizes a film as connected productions, beats, characters, locations, storyboard variants, shots, takes, and final outputs. Every generated asset retains the context that produced it." },
+  { title: "Generation workflow", body: "Generation requests combine direction, model settings, visual references, continuity mode, and budget preflight. Long-running jobs expose progress and previews instead of becoming a blind request." },
+  { title: "Authentication", body: "The application supports account sessions and Google OAuth with PKCE, nonce validation, one-time state, and server-side ownership checks for project APIs." },
+  { title: "Start building", body: "Use the API reference for request shapes and the workflows guide for the recommended script-to-finish sequence.", points: ["Read the API reference", "Choose Cut or Continue deliberately", "Keep exact typography in post-production", "Review every generated take before approval"] }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Documentation" description="Documentation for Fylmer's production-aware creative platform."><InfoPage eyebrow="Documentation" title="Build with production context." intro="Technical guidance for creating stories, preserving continuity, routing models, and managing generated media through Fylmer." sections={sections} cta={{label:"API reference",href:"/docs/api"}} /></SiteLayout>

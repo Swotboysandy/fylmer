@@ -1,0 +1,30 @@
+node_modules/
+dist/
+.astro/
+.samples/
+
+# Local environment and tooling
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+.claude/
+.cursor/
+
+# Local QA and design artifacts
+design-qa.md
+/*.png
+/assets/
+/inner.css
+/inner.js
+/retro-dither-registry.json
+/retro-dither.js
+/styles.css
+/theme-toggle.js
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.log
+

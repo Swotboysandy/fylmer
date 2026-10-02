@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import InfoPage from "../components/InfoPage.astro";
+const sections = [
+  { title: "Human approval", body: "Generated frames and clips are treated as takes. People review identity, anatomy, physical contact, continuity, audio, and narrative suitability before approval or delivery." },
+  { title: "Clear limitations", body: "Reference conditioning improves control but does not guarantee pixel-identical identity. Provider availability, model behavior, storage, and compute remain operational dependencies." },
+  { title: "Access and spend", body: "Project ownership is enforced on application APIs. Supported GPU jobs use budget preflight, a single-render lock, and stop paths, while provider spending controls remain essential." }
+];
+---
+<SiteLayout pageClass="inner-page" title="Fylmer Safety" description="Fylmer safety, review, access, and model limitation principles."><InfoPage eyebrow="Safety" title="Generated media stays reviewable." intro="Fylmer is designed around human direction, visible model state, bounded generation, and honest communication about limitations." sections={sections} /></SiteLayout>

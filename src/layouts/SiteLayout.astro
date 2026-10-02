@@ -1,0 +1,52 @@
+---
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pageClass?: string;
+}
+
+const { title, description, pageClass = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/inner.css" />
+    <script is:inline src="/theme-toggle.js" defer></script>
+    <script is:inline src="/retro-dither.js" defer></script>
+  </head>
+  <body class={pageClass}>
+    <div class="site-shell">
+      <SiteHeader />
+      <slot />
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  .inner-global-nav {
+    position: relative;
+    top: auto;
+    color: #111 !important;
+    background: #fff !important;
+  }
+  .inner-global-nav .nav-shell { width: 100%; }
+  .inner-global-nav .brand-mark,
+  .inner-global-nav .nav-links a,
+  .inner-global-nav .nav-trigger,
+  .inner-global-nav .login-link { color: #111 !important; }
+  .inner-global-nav .brand-mark,
+  .inner-global-nav .brand-mark span { color: #111 !important; text-shadow: none !important; }
+  .inner-global-nav .button-primary { color: #111 !important; background: rgba(255,255,255,.86) !important; }
+  .inner-global-nav .mobile-menu-toggle span { background: #111 !important; }
+  .inner-page > main { display: block; }
+</style>
