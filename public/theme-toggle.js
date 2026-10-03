@@ -19,8 +19,13 @@
 
   const toggle = () => {
     const next = root.dataset.theme === "dark" ? "light" : "dark";
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!document.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (!document.startViewTransition || reducedMotion) {
+      if (!reducedMotion) {
+        root.dataset.heroThemeWipe = root.dataset.theme;
+        window.setTimeout(() => delete root.dataset.heroThemeWipe, 720);
+      }
       applyTheme(next);
       return;
     }
