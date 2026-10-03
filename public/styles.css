@@ -47,15 +47,17 @@
 html[data-beui-vt="blinds"]::view-transition {
   z-index: 2147483647;
   pointer-events: none;
+  background: #000;
 }
 
 html[data-beui-vt="blinds"]::view-transition-group(root) {
   z-index: 1;
+  background: #000;
 }
 
 html[data-beui-vt="blinds"]::view-transition-group(hero-wallpaper) {
   z-index: 3;
-  background: var(--bg);
+  background: #000;
 }
 
 html[data-beui-vt="blinds"]::view-transition-group(site-header) {
@@ -63,12 +65,18 @@ html[data-beui-vt="blinds"]::view-transition-group(site-header) {
 }
 
 html[data-beui-vt="blinds"]::view-transition-image-pair(hero-wallpaper) {
-  background: var(--bg);
+  background: #000;
+  isolation: isolate;
+}
+
+html[data-beui-vt="blinds"]::view-transition-image-pair(root) {
+  background: #000;
   isolation: isolate;
 }
 
 html[data-beui-vt="blinds"]::view-transition-old(root) {
   z-index: 1;
+  opacity: 0;
   animation: none;
   mix-blend-mode: normal;
 }
@@ -814,12 +822,8 @@ html[data-hero-theme-wipe] .hero-section::before {
   animation: hero-theme-wipe 1050ms cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
-html[data-hero-theme-wipe="dark"] .hero-section::before {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-html[data-hero-theme-wipe="light"] .hero-section::before {
-  background: rgba(4, 18, 12, 0.42);
+html[data-hero-theme-wipe] .hero-section::before {
+  background: #000;
 }
 
 .hero-section::after {
