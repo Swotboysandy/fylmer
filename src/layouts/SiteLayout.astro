@@ -43,6 +43,17 @@ const structuredData = {
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#ffffff" />
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem("fylmer-theme");
+          const theme = saved === "dark" || saved === "light"
+            ? saved
+            : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.dataset.theme = theme;
+        } catch {}
+      })();
+    </script>
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
@@ -82,6 +93,17 @@ const structuredData = {
     color: #111 !important;
     background: #fff !important;
   }
+  :root[data-theme="dark"] .inner-global-nav {
+    color: #f4f4f2 !important;
+    background: #111 !important;
+  }
+  :root[data-theme="dark"] .inner-global-nav .brand-mark,
+  :root[data-theme="dark"] .inner-global-nav .brand-mark span,
+  :root[data-theme="dark"] .inner-global-nav .nav-links a,
+  :root[data-theme="dark"] .inner-global-nav .nav-trigger,
+  :root[data-theme="dark"] .inner-global-nav .login-link { color: #f4f4f2 !important; }
+  :root[data-theme="dark"] .inner-global-nav .button-primary { color: #111 !important; background: #f4f4f2 !important; }
+  :root[data-theme="dark"] .inner-global-nav .mobile-menu-toggle span { background: #f4f4f2 !important; }
   .inner-global-nav .nav-shell { width: 100%; }
   .inner-global-nav .brand-mark,
   .inner-global-nav .nav-links a,

@@ -244,3 +244,26 @@ figcaption { padding-top:10px; color:var(--muted); font-size:13px; line-height:1
 }
 
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+:root[data-theme="dark"] {
+  --ink:#f4f4f2;
+  --muted:#a3a3a0;
+  --line:#343434;
+  --paper:#111;
+}
+
+:root[data-theme="dark"] .article-nav,
+:root[data-theme="dark"] .fact,
+:root[data-theme="dark"] .menu-button,
+:root[data-theme="dark"] .mobile-sheet { background:#111; color:var(--ink); }
+:root[data-theme="dark"] .menu-button,
+:root[data-theme="dark"] .mobile-sheet { border-color:var(--line); }
+:root[data-theme="dark"] .menu-button span { background:var(--ink); }
+:root[data-theme="dark"] .callout { background:#191919; }
+:root[data-theme="dark"] .feature-grid article,
+:root[data-theme="dark"] .info-sections { border-color:var(--ink); }
+:root[data-theme="dark"] .info-hero > p,
+:root[data-theme="dark"] .info-hero-copy p,
+:root[data-theme="dark"] .info-section > span,
+:root[data-theme="dark"] .info-section p,
+:root[data-theme="dark"] .info-section li { color:var(--muted); }

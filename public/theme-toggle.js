@@ -5,10 +5,16 @@
 
   const applyTheme = (theme) => {
     root.dataset.theme = theme;
-    button.setAttribute(
-      "aria-label",
-      theme === "dark" ? "Switch to light page theme" : "Switch to dark page theme"
-    );
+    const label = theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    button.setAttribute("aria-label", label);
+    button.setAttribute("title", label);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? "#111111" : "#ffffff");
+    const compactShell = document.querySelector(".top-nav.is-scrolled .nav-shell");
+    if (compactShell) {
+      compactShell.style.backgroundColor = theme === "dark" ? "rgba(20,20,20,0.92)" : "rgba(255,255,255,0.92)";
+      compactShell.style.boxShadow = theme === "dark" ? "0 12px 36px rgba(0,0,0,0.34)" : "0 12px 36px rgba(10,20,40,0.14)";
+    }
+    try { window.localStorage.setItem("fylmer-theme", theme); } catch {}
   };
 
   const toggle = () => {
@@ -26,7 +32,7 @@
     });
   };
 
-  applyTheme("light");
+  applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
   button.addEventListener("click", toggle);
 })();
 
@@ -72,7 +78,7 @@
     const viewportWidth = document.documentElement.clientWidth;
     return {
       heroWidth: viewportWidth,
-      compactWidth: Math.min(viewportWidth - 32, 800),
+      compactWidth: Math.min(viewportWidth - 32, 860),
       heroPadding: Math.max(20, Math.min(viewportWidth * 0.032, 64)),
     };
   };
@@ -106,8 +112,8 @@
       header.querySelector(".nav-shell"),
       scrolled
         ? {
-            backgroundColor: "rgba(255,255,255,0.92)",
-            boxShadow: "0 12px 36px rgba(10,20,40,0.14)",
+            backgroundColor: document.documentElement.dataset.theme === "dark" ? "rgba(20,20,20,0.92)" : "rgba(255,255,255,0.92)",
+            boxShadow: document.documentElement.dataset.theme === "dark" ? "0 12px 36px rgba(0,0,0,0.34)" : "0 12px 36px rgba(10,20,40,0.14)",
             borderRadius: "18px",
             transform: ["translateY(-10px) scale(0.985)", "translateY(0) scale(1)"],
           }
