@@ -58,6 +58,10 @@ html[data-beui-vt="blinds"]::view-transition-group(hero-wallpaper) {
   background: var(--bg);
 }
 
+html[data-beui-vt="blinds"]::view-transition-group(site-header) {
+  z-index: 4;
+}
+
 html[data-beui-vt="blinds"]::view-transition-image-pair(hero-wallpaper) {
   background: var(--bg);
   isolation: isolate;
@@ -104,6 +108,16 @@ html[data-beui-vt="blinds"]::view-transition-new(hero-wallpaper) {
   mask-size: 72px 100%;
   mask-repeat: repeat;
   animation: beui-blinds-reveal 1050ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html[data-beui-vt="blinds"]::view-transition-old(site-header) {
+  opacity: 0;
+  animation: none;
+}
+
+html[data-beui-vt="blinds"]::view-transition-new(site-header) {
+  opacity: 1;
+  animation: none;
 }
 
 * {
@@ -250,6 +264,7 @@ main {
 
 .top-nav {
   position: fixed;
+  view-transition-name: site-header;
   top: 0;
   left: 0;
   right: 0;
