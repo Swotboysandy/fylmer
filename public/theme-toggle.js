@@ -301,7 +301,7 @@
       const buttons = Array.from(featureList.querySelectorAll("button"));
       const activeIndex = buttons.findIndex((item) => item.classList.contains("is-active"));
       selectFeature(buttons[(activeIndex + 1) % buttons.length]);
-    }, 2000);
+    }, 2200);
   };
 
   const selectFeature = (button, restartTimer = false) => {
