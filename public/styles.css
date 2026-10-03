@@ -33,12 +33,12 @@
   --muted: rgba(244, 244, 242, 0.58);
   --soft: rgba(255, 255, 255, 0.07);
   --line: rgba(255, 255, 255, 0.14);
-  --hero-overlay-a: rgba(0, 0, 0, 0.72);
-  --hero-overlay-b: rgba(0, 0, 0, 0.46);
-  --hero-overlay-c: rgba(0, 0, 0, 0.18);
-  --hero-vignette-a: rgba(0, 0, 0, 0.28);
-  --hero-vignette-b: rgba(0, 0, 0, 0.12);
-  --hero-vignette-c: rgba(0, 0, 0, 0.76);
+  --hero-overlay-a: rgba(0, 0, 0, 0.86);
+  --hero-overlay-b: rgba(0, 0, 0, 0.62);
+  --hero-overlay-c: rgba(0, 0, 0, 0.32);
+  --hero-vignette-a: rgba(0, 0, 0, 0.42);
+  --hero-vignette-b: rgba(0, 0, 0, 0.22);
+  --hero-vignette-c: rgba(0, 0, 0, 0.88);
   --hero-text: #ffffff;
   --hero-subtext: rgba(255, 255, 255, 0.86);
   --surface: #171717;
