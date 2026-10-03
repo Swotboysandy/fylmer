@@ -44,7 +44,17 @@
   --surface: #171717;
 }
 
+html[data-beui-vt="blinds"]::view-transition {
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+html[data-beui-vt="blinds"]::view-transition-group(root) {
+  z-index: 1;
+}
+
 html[data-beui-vt="blinds"]::view-transition-old(root) {
+  z-index: 1;
   animation: none;
   mix-blend-mode: normal;
 }
@@ -56,6 +66,7 @@ html[data-beui-vt="blinds"]::view-transition-old(root) {
 }
 
 html[data-beui-vt="blinds"]::view-transition-new(root) {
+  z-index: 2;
   mix-blend-mode: normal;
   mask-image: linear-gradient(
     90deg,
@@ -127,12 +138,12 @@ main {
   flex: 0 0 auto;
   padding: 0;
   overflow: hidden;
-  border: 1px solid currentColor;
+  border: 0;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);
   color: currentColor;
   cursor: pointer;
-  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  transition: background-color 180ms ease, transform 180ms ease;
 }
 
 .theme-toggle:hover { background: rgba(255, 255, 255, 0.18); }
@@ -140,15 +151,13 @@ main {
 .theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
 .top-nav:not(.is-scrolled) .theme-toggle {
-  border-color: rgba(255, 255, 255, 0.46);
   background: rgba(7, 10, 12, 0.24);
   color: #fff;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 8px 24px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(14px) saturate(1.15);
 }
 
 .top-nav:not(.is-scrolled) .theme-toggle:hover {
-  border-color: rgba(255, 255, 255, 0.7);
   background: rgba(7, 10, 12, 0.4);
 }
 
@@ -167,7 +176,7 @@ main {
 :root[data-theme="dark"] .theme-icon-sun { opacity: 1; filter: blur(0); transform: rotate(0) scale(1); }
 
 .top-nav.is-scrolled .theme-toggle,
-.inner-global-nav .theme-toggle { background: var(--soft); border-color: var(--line); color: var(--ink); }
+.inner-global-nav .theme-toggle { background: var(--soft); color: var(--ink); }
 
 :root[data-theme="dark"] .partners-strip,
 :root[data-theme="dark"] .intro-section,
@@ -2419,7 +2428,6 @@ main {
 }
 
 :root[data-theme="dark"] .top-nav.is-scrolled .theme-toggle {
-  border-color: var(--line);
   background: #252525;
   color: var(--ink);
 }
