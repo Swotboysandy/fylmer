@@ -55,6 +55,12 @@ html[data-beui-vt="blinds"]::view-transition-group(root) {
 
 html[data-beui-vt="blinds"]::view-transition-group(hero-wallpaper) {
   z-index: 3;
+  background: var(--bg);
+}
+
+html[data-beui-vt="blinds"]::view-transition-image-pair(hero-wallpaper) {
+  background: var(--bg);
+  isolation: isolate;
 }
 
 html[data-beui-vt="blinds"]::view-transition-old(root) {
@@ -83,6 +89,7 @@ html[data-beui-vt="blinds"]::view-transition-new(root) {
 }
 
 html[data-beui-vt="blinds"]::view-transition-old(hero-wallpaper) {
+  opacity: 0;
   animation: none;
   mix-blend-mode: normal;
 }
