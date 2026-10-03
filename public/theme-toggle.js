@@ -24,7 +24,7 @@
     if (!document.startViewTransition || reducedMotion) {
       if (!reducedMotion) {
         root.dataset.heroThemeWipe = root.dataset.theme;
-        window.setTimeout(() => delete root.dataset.heroThemeWipe, 720);
+        window.setTimeout(() => delete root.dataset.heroThemeWipe, 1100);
       }
       applyTheme(next);
       return;
